@@ -13,14 +13,14 @@ public class Doctor {
     private String name;
     private String DateOfBirth;
     private String Specialization;
-    private int Availability;
+    private String Availability;
     private String email;
     private String Mobile;
 
     public Doctor() {
     }
 
-    public Doctor(int ID, String name, String DateOfBirth, String Specialization, int Availability, String email, String Mobile) {
+    public Doctor(int ID, String name, String DateOfBirth, String Specialization, String Availability, String email, String Mobile) {
         this.ID = ID;
         this.name = name;
         this.DateOfBirth = DateOfBirth;
@@ -62,11 +62,11 @@ public class Doctor {
         this.Specialization = Specialization;
     }
 
-    public int getAvailability() {
+    public String getAvailability() {
         return Availability;
     }
 
-    public void setAvailability(int Availability) {
+    public void setAvailability(String Availability) {
         this.Availability = Availability;
     }
 

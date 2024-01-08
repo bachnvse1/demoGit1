@@ -20,8 +20,8 @@ public class Main {
     }
     
     public static void main(String[] args) {
-        List<Doctor> list = new ArrayList<>();
-        
+        DoctorManagement t = new DoctorManagement();
+        t.menu();
     }
     
 }

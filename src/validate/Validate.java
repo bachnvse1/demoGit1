@@ -98,12 +98,38 @@ public class Validate {
         }
     }
 
-    public boolean checkEmail(String email) {
+    public String checkEmail() {
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
-        Pattern pattern = Pattern.compile(emailRegex);
-        Matcher matcher = pattern.matcher(email);
-
-        return matcher.matches();
+        while (true) {
+            try {
+                String input = sc.nextLine();
+                Pattern pattern = Pattern.compile(emailRegex);
+                Matcher matcher = pattern.matcher(input);
+                if (matcher.matches()) {
+                    return input;
+                }
+                throw new Exception();
+            } catch (Exception e) {
+                System.out.println("Erorr!");
+                System.out.println("Enter email: ");
+            }
+        }
     }
 
+    public String checkMobile() {
+        String pattern = "^\\(\\d{3}\\)-\\d{3}-\\d{4}$";
+        Pattern regex = Pattern.compile(pattern);
+        while (true) {
+            try {
+                String input = sc.nextLine();
+                Matcher matcher = regex.matcher(input);
+                if(matcher.matches()) {
+                    return input;
+                } throw new Exception();
+            } catch(Exception e) {
+                System.out.println("Erorr!");
+                System.out.println("Enter mobile: ");
+            }
+        }
+    }
 }
